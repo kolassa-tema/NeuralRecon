@@ -1,15 +1,16 @@
+# cuda in system ==11.8
 name: neucon
 channels:
-  # You can use the TUNA mirror to speed up the installation if you are in mainland China.
-  # - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch
   - pytorch
   - defaults
+  - nvidia
   - conda-forge
 dependencies:
-  - python=3.7.9
-  - pytorch=1.6.0
-  - torchvision=0.7.0
-  - cudatoolkit=10.2
+  - python=3.10
+  - pytorch=2.0.0
+  - torchvision=0.15.0 
+  - torchaudio=2.0.0
+  - pytorch-cuda=11.8
   - ipython
   - tqdm
   - numba
@@ -17,4 +18,5 @@ dependencies:
   - pip
   - pip:
     - -r requirements.txt
-    - git+https://github.com/mit-han-lab/torchsparse.git
+# torchsparse.git@v2.0.0 must be v2.0.0, the higher version has changed api!!!
+# and it may take times to build wheel

@@ -1,0 +1,9 @@
+services:
+  neural-recon:
+    build: .
+    command: tail -f /dev/null
+    shm_size: '16gb'
+    ports:
+      - "8000:5000"
+    volumes:
+      - ./:/NeuralRecon
